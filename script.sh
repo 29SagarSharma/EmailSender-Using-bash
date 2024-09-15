@@ -14,7 +14,7 @@ if [ $exitstatus = 0 ]; then
 else
     echo "User selected Cancel."
 fi
-recipient="sagaramps29@gmail.com"
+recipient=""
 subject="Status Update"
 body="Today's Status"
 attachment="script.txt"
