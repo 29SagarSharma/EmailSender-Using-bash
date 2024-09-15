@@ -1,6 +1,7 @@
 #!/bin/bash
 
-recipient="sagar12sw230@gmail.com"
+#ssmtp for sending mails
+recipient="sagar12s230@gmail.com"
 subject="Status Update"
 body="Today's Status"
 attachment="script.txt"
@@ -10,7 +11,7 @@ NAME=$(whiptail --inputbox "Yourname" 8 39 --title "Status Update" 3>&1 1>&2 2>&
 DATE=$(whiptail --inputbox "Date" 8 39 --title "Status Update" 3>&1 1>&2 2>&3)
 STATUS=$(whiptail --inputbox "Status" 8 39 --title "Status Update" 3>&1 1>&2 2>&3)
 
-                                                                        
+#if data entry successfully then store it in a file and send over email                                                                        
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     echo " $NAME ":" $DATE ": Status" $STATUS " > script.txt  |  echo -e "$body" | mailx -s "$subject" -A "$attachment" "$recipient"
